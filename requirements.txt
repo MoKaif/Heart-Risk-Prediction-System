@@ -41,5 +41,5 @@ threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263
 tornado==6.2
 traitlets==5.8.0
 wcwidth==0.2.5
-Werkzeug @ file:///C:/b/abs_17q5kgb8bo/croot/werkzeug_1671216014857/work
+Werkzeug==0..
 wincertstore==0.2
