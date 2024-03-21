@@ -18,7 +18,7 @@ def output():
         
         a = request.form['age']
         a = int(a)
-        a = ((a-0.08)/(82-0.08))
+        # a = ((a-0.08)/(82-0.08))
 
         cpt = request.form['cpt']
         if cpt == "ATA":
@@ -66,19 +66,10 @@ def output():
             st = 1
 
         print(a,g,cpt,restingbp,c,f,restingECG,m,ea,op,st)
-
-        # Check which class depending on the Chest Pain type
-        if cpt == 1:
-            clasv = "Class A: No objective evidence of cardiovascular disease. No symptoms and no limitation in ordinary physical activity."
-        elif cpt == 2:
-            clasv = "Class B: Objective evidence of minimal cardiovascular disease. Mild symptoms and slight limitation during ordinary activity. Comfortable at rest."
-        elif cpt == 3:
-            clasv = "Class C: Objective evidence of moderately severe cardiovascular disease. Marked limitation in activity due to symptoms, even during less-than-ordinary activity. Comfortable only at rest."
-        elif cpt == 4:
-            clasv = "Class D: Objective evidence of severe cardiovascular disease. Severe limitations. Experiences symptoms even while at rest."
+       
         try:
             prediction = heart_pred(a,g,cpt,restingbp,c,f,restingECG,m,ea,op,st)
-            return render_template('output.html',prediction=prediction, clas = clasv)
+            return render_template('output.html',prediction=prediction)
 
         except ValueError:
             return "Please Enter Valid Values"
